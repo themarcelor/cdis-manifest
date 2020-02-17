@@ -1,6 +1,6 @@
 {% extends "base_manifest.json" %}
   {% block notes %}
-    "This is the staging manifest",
+    "This is the staging environment manifest",
     "That's all I have to say"
   {% endblock %}
 
