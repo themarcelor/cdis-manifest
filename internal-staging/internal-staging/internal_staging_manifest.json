@@ -1,0 +1,27 @@
+{% extends "base_manifest.json" %}
+  {% block notes %}
+    "This is the internal staging manifest",
+    "That's all I have to say"
+  {% endblock %}
+  
+  {%- block global -%}
+    "environment": "stageprod",
+    {{ super() }}
+  {%- endblock -%}
+
+  {% block scaling %}
+    "fence": {
+      "strategy": "auto",
+      "min": 5,
+      "max": 15,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 2,
+      "max": 5,
+      "targetCpu": 40
+    },
+    {{ super() }}
+  {% endblock %}
+}

@@ -1,0 +1,16 @@
+{% extends "base_manifest.json" %}
+  {% block notes %}
+    "This is the staging manifest",
+    "That's all I have to say"
+  {% endblock %}
+
+  {%- block versions -%}
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    {{ super() }}
+  {%- endblock -%}
+  
+  {%- block global -%}
+    "environment": "stagingdatastage",
+    {{ super() }}
+  {%- endblock -%}
+}

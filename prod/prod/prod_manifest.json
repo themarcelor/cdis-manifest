@@ -1,0 +1,32 @@
+{% extends "base_manifest.json" %}
+  {% block notes %}
+    "This is the prod manifest",
+    "That's all I have to say"
+  {% endblock %}
+
+  {%- block versions -%}
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    {{ super() }}
+  {%- endblock -%}
+  
+  {%- block global -%}
+    "environment": "stageprod",
+    {{ super() }}
+  {%- endblock -%}
+
+  {% block scaling %}
+    "fence": {
+      "strategy": "auto",
+      "min": 5,
+      "max": 15,
+      "targetCpu": 40
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 20,
+      "max": 25,
+      "targetCpu": 40
+    },
+    {{ super() }}
+  {% endblock %}
+}
