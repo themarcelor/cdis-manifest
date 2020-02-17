@@ -1,16 +1,16 @@
 {% extends "base_manifest.json" %}
   {% block notes %}
-    "This is the prod manifest",
+    "This is the prod environment manifest",
     "That's all I have to say"
   {% endblock %}
 
   {%- block versions -%}
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
     {{ super() }}
   {%- endblock -%}
   
   {%- block global -%}
-    "environment": "stageprod",
+    "environment": "{{ kube_namespace }}",
     {{ super() }}
   {%- endblock -%}
 
@@ -25,6 +25,12 @@
       "strategy": "auto",
       "min": 20,
       "max": 25,
+      "targetCpu": 40
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 4,
+      "max": 8,
       "targetCpu": 40
     },
     {{ super() }}
