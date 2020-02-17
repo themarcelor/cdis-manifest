@@ -10,7 +10,7 @@
   },
   "versions": {
     {%- block versions -%}
-    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds", 
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "ambassador": "quay.io/datawire/ambassador:0.60.3" 
@@ -70,7 +70,7 @@
           }
         ],
         "cpu-limit": "1",
-        "memory-limit": "12Gi"
+        "memory-limit": "{{ sower_memory_limit|default('12Gi', true) }}"
       },
       "volumes": [
         {
@@ -92,7 +92,7 @@
 {%- endif %}
 {%- if hatchery_enabled %}
   "hatchery": {
-    "user-namespace": "jupyter-pods",
+    "user-namespace": "{{ hatchery_user_namespace|default('jupyter-pods', True) }}",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "500Gi",
     "sidecar": {
@@ -100,8 +100,8 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
       "env": {
-        "NAMESPACE": "default",
-        "HOSTNAME": "gen3.datastage.io"
+        "NAMESPACE": "{{ kube_namespace }}",
+        "HOSTNAME": "{{ hostname }}"
       },
       "args": [],
       "command": [
@@ -307,7 +307,7 @@
     {%- endblock -%}
   },
   "scaling": {
-    {%- block scaling -%}
+    {% block scaling -%}
     "arborist": {
       "strategy": "auto",
       "min": 2,
@@ -315,12 +315,6 @@
       "targetCpu": 40
     },
     "portal": {
-      "strategy": "auto",
-      "min": 2,
-      "max": 4,
-      "targetCpu": 40
-    },
-    "indexd": {
       "strategy": "auto",
       "min": 2,
       "max": 4,
@@ -350,6 +344,6 @@
       "max": 4,
       "targetCpu": 40
     }
-    {%- endblock -%}
+    {%- endblock %}
   }
 }
