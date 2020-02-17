@@ -5,7 +5,7 @@
   {% endblock %}
 
   {%- block versions -%}
-    "dashboard": "quay.io/cdis/gen3-statics:1.0.0"
+    "dashboard": "quay.io/cdis/gen3-statics:1.0.0",
     {{ super() }}
   {%- endblock -%}
   
