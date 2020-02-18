@@ -1,7 +1,8 @@
 {%- set sower_enabled = True -%}
 {%- set sower_memory_limit = '4Gi' -%}
 {%- set hatchery_enabled = True -%}
-{%- set kube_namespace = 'stagingdatastage' -%}
+{%- set kube_namespace = 'staging' -%}
+{%- set vpc_name = 'stagingdatastage' -%}
 {%- set hatchery_user_namespace = 'jupyter-pods-staging' -%}
 {% extends "external-staging/external_staging_manifest.json" %}
 

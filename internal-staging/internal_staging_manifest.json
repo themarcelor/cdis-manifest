@@ -5,7 +5,7 @@
   {% endblock %}
   
   {%- block global -%}
-    "environment": "stageprod",
+    "environment": "{{ vpc_name }}",
     {{ super() }}
   {%- endblock -%}
 

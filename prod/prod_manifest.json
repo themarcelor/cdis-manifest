@@ -10,7 +10,7 @@
   {%- endblock -%}
   
   {%- block global -%}
-    "environment": "{{ kube_namespace }}",
+    "environment": "{{ vpc_name }}",
     {{ super() }}
   {%- endblock -%}
 

@@ -1,6 +1,7 @@
 {%- set sower_enabled = True -%}
 {%- set hatchery_enabled = True -%}
 {%- set kube_namespace = 'default' -%}
+{%- set vpc_name = 'stageprod' -%}
 {% extends "prod/prod_manifest.json" %}
 
   {% block versions %}

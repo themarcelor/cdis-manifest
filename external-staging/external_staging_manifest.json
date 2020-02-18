@@ -10,7 +10,7 @@
   {%- endblock -%}
   
   {%- block global -%}
-    "environment": "stagingdatastage",
+    "environment": "{{ vpc_name }}",
     {{ super() }}
   {%- endblock -%}
 }

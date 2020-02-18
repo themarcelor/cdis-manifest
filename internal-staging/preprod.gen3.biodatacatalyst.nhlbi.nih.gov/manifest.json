@@ -1,6 +1,7 @@
 {%- set sower_enabled = True -%}
 {%- set hatchery_enabled = True -%}
-{%- set kube_namespace = 'stageprod' -%}
+{%- set kube_namespace = 'internalstaging' -%}
+{%- set vpc_name = 'stageprod' -%}
 {% extends "internal-staging/internal_staging_manifest.json" %}
 
   {% block versions %}
