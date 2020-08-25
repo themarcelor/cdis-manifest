@@ -392,6 +392,9 @@
             "project_id",
             "data_type",
             "data_format"
+          ],
+          "searchFields": [
+            "file_id"
           ]
         }
       ]
@@ -435,6 +438,19 @@
         "enabled": true,
         "type": "export-files-to-workspace",
         "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export",
+        "title": "Export All to Terra",
+        "rightIcon": "external-link"
+      },
+      {
+        "enabled": true,
+        "type": "export-to-pfb",
+        "title": "Export to PFB",
         "leftIcon": "datafile",
         "rightIcon": "download"
       }
