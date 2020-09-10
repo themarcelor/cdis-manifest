@@ -21,6 +21,8 @@
     ],
     "projectDetails": "boardCounts"
   },
+  "showArboristAuthzOnProfile": true,
+  "showFenceAuthzOnProfile": false,
   "components": {
     "appName": "NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Space (AnVIL)",
     "index": {
@@ -253,7 +255,7 @@
       "accessibleValidationField": "project_id"
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/",
-    "terraExportURL": "https://bvdp-saturn-dev.appspot.com/#import-data"
+    "terraExportURL": "https://anvil.terra.bio/#import-data"
   },
   "fileExplorerConfig": {
     "charts": {

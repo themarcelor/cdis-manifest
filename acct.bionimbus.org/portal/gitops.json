@@ -188,6 +188,7 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "submitter_id",
         "disease_type",
         "index_date",
         "primary_site",
@@ -210,6 +211,7 @@
       "dataType": "subject",
       "nodeCountTitle": "Subjects",
       "fieldMapping": [
+        { "field": "submitter_id", "name": "Subject ID" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
