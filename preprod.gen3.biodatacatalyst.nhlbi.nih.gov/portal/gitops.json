@@ -403,7 +403,8 @@
             "bucket_path"
           ],
           "searchFields": [
-            "file_id"
+            "file_id",
+            "file_name"
           ]
         }
       ]
