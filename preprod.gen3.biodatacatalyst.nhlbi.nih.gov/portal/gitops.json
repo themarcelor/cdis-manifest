@@ -250,9 +250,12 @@
         },
         {
           "title": "Subject",
+          "searchFields": [
+            "subject_id",
+            "submitter_id",
+            "consent_codes"
+          ],
           "fields": [
-            "project_id",
-            "consent_codes",
             "data_type",
             "data_format",
             "race",
@@ -396,11 +399,10 @@
         {
           "title": "File",
           "fields": [
-            "project_id",
             "data_type",
             "data_format",
-            "callset",
-            "bucket_path"
+            "bucket_path",
+	    "project_id"
           ],
           "searchFields": [
             "file_id",
