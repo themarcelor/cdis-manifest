@@ -636,39 +636,15 @@
     "dropdowns": {}
   },
   "discoveryConfig": {
+    "page_title": "Study Discovery",
     "features": {
-      "exploration_integration": {
-        "enabled": false
-      },
-      "views": {
-        "grid_view": {
-          "enabled": false
-        }
-      },
       "search": {
         "search_bar": {
-          "enabled": true,
-          "search_tags": true,
-          "searchable_text_fields": [
-            "study_name",
-            "study_description",
-            "dbgap_accession"
-          ]
+          "enabled": true
         }
       },
       "authorization": {
-        "enabled": true,
-        "request_access": {
-          "enabled": true,
-          "type": "global|per_study|both",
-          "global": {
-            "string": "You can request access by going to dbGaP, unless otherwise instructed below. \nThis is a new line."
-          },
-          "per_study": {
-            "content_type": "string",
-            "field": "access_instructions"
-          }
-        }
+        "enabled": true
       }
     },
     "aggregations": [
@@ -684,7 +660,7 @@
         }
     ],
     "tag_selector": {
-      "title": "Associated tags organized by category"
+      "title": "Tags by category"
     },
     "study_columns": [
       {
