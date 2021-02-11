@@ -95,6 +95,12 @@
         },
         {
           "icon": "query",
+          "link": "/discovery",
+          "color": "#a2a2a2",
+          "name": "Discovery"
+        },
+        {
+          "icon": "analysis",
           "link": "/query",
           "color": "#a2a2a2",
           "name": "Query"
@@ -636,8 +642,11 @@
     "dropdowns": {}
   },
   "discoveryConfig": {
-    "page_title": "Study Discovery",
     "features": {
+      "page_title": {
+        "enabled": false,
+        "text": "Study Discovery"
+      },
       "search": {
         "search_bar": {
           "enabled": true
